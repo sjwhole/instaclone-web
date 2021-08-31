@@ -1,3 +1,5 @@
+import React from "react";
+import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import { BaseBox } from "../shared";
 
@@ -29,6 +31,10 @@ const Container = styled(BaseBox)`
 
 const FormBox = ({ children }) => {
   return <Container>{children}</Container>;
+};
+
+FormBox.propTypes = {
+  children: PropTypes.any,
 };
 
 export default FormBox;
