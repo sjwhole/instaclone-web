@@ -1,3 +1,5 @@
+import React from "react";
+import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import { useReactiveVar } from "@apollo/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,6 +39,10 @@ const AuthLayout = ({ children }) => {
       </Footer>
     </Container>
   );
+};
+
+AuthLayout.propTypes = {
+  children: PropTypes.any,
 };
 
 export default AuthLayout;
