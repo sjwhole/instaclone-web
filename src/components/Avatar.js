@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
 
 const SAvatar = styled.div`
@@ -14,6 +16,11 @@ const Img = styled.img`
 
 const Avatar = ({ url = "", lg = false }) => {
   return <SAvatar lg={lg}>{url !== "" ? <Img src={url} /> : null}</SAvatar>;
+};
+
+Avatar.propTypes = {
+  url: PropTypes.string,
+  lg: PropTypes.bool,
 };
 
 export default Avatar;
