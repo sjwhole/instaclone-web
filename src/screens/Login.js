@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from "styled-components";
 import {
   faFacebookSquare,
@@ -67,7 +68,7 @@ const Login = () => {
   const [login, { loading }] = useMutation(LOGIN_MUTATION, {
     onCompleted,
   });
-  const onSubmintValid = (data) => {
+  const onSubmintValid = () => {
     if (loading) {
       return;
     }
