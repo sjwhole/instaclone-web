@@ -1,3 +1,4 @@
+import React from "react";
 import { useReactiveVar } from "@apollo/client";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faCompass } from "@fortawesome/free-regular-svg-icons";
@@ -56,13 +57,15 @@ function Header() {
     <SHeader>
       <Wrapper>
         <Column>
-          <FontAwesomeIcon icon={faInstagram} size="2x" />
+          <Link  to={routes.home}>
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
+          </Link>
         </Column>
         <Column>
           {isLoggedIn ? (
             <IconsContainer>
               <Icon>
-                <Link style={{ color: "black" }} to={routes.home}>
+                <Link  to={routes.home}>
                   <FontAwesomeIcon icon={faHome} size="lg" />
                 </Link>
               </Icon>
@@ -70,7 +73,9 @@ function Header() {
                 <FontAwesomeIcon icon={faCompass} size="lg" />
               </Icon>
               <Icon>
-                <Avatar url={data?.me?.avatar} />
+                <Link to={`/users/${data?.me.username}`}>
+                  <Avatar url={data?.me?.avatar} />
+                </Link>
               </Icon>
             </IconsContainer>
           ) : (
